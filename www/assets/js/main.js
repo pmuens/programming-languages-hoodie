@@ -13,7 +13,7 @@ $('.new-language-form').submit(function (event) {
 
 // insert the newly created language into the table
 hoodie.store.on('add:language', function (language) {
-  $('table.table > tbody:last').append('<tr><td>' + language.name + '</td><td>' + language.votes + '</td><td><input type="button" class="' + language.id + ' upvote btn btn-success" value="Upvote"></td><td><input type="button" class="' + language.id + ' downvote btn btn-danger" value="Downvote"></td></tr>');
+  $('table.table > tbody:last').append('<tr><td>' + language.name + '</td><td>' + language.votes + '</td><td><input type="button" id="' + language.id + '" class="upvote btn btn-success" value="Upvote"></td><td><input type="button" id="' + language.id + '" class="downvote btn btn-danger" value="Downvote"></td></tr>');
 });
 
 // add all languages to the table when a user visits the page
@@ -21,6 +21,6 @@ hoodie.store.findAll('language').done(function (languages) {
   $('table.table > tbody:last').html('');
 
   languages.forEach(function (language) {
-    $('table.table > tbody:last').append('<tr><td>' + language.name + '</td><td>' + language.votes + '</td><td><input type="button" class="' + language.id + ' upvote btn btn-success" value="Upvote"></td><td><input type="button" class="' + language.id + ' downvote btn btn-danger" value="Downvote"></td></tr>');
+    $('table.table > tbody:last').append('<tr><td>' + language.name + '</td><td>' + language.votes + '</td><td><input type="button" id="' + language.id + '" class="upvote btn btn-success" value="Upvote"></td><td><input type="button" id="' + language.id + '" class="downvote btn btn-danger" value="Downvote"></td></tr>');
   });
 })
