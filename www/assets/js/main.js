@@ -38,3 +38,17 @@ $(document).on('click', '.upvote', function () {
     })
   });
 });
+
+// downvote a language
+$(document).on('click', '.downvote', function () {
+  var id = this.id;
+
+  // get the current vote-Count, decrement it and update the votes for the language
+  hoodie.store.find('language', id).done(function (language) {
+    decrementedVotes = language.votes - 1;
+
+    hoodie.store.update('language', id, { votes: decrementedVotes }).done(function (updatedLanguage) {
+      $('.votes-for-language-with-id-' + id).text(decrementedVotes);
+    })
+  });
+});
