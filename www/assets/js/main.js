@@ -12,6 +12,6 @@ $('.new-language-form').submit(function (event) {
 });
 
 // insert the newly created language into the table
-hoodie.store.on('add:language', function (object) {
-  $('table.table > tbody:last').append('<tr><td>' + object.name + '</td><td>' + object.votes + '</td><td><input type="button" class="' + object.id + ' upvote btn btn-success" value="Upvote"></td><td><input type="button" class="' + object.id + ' downvote btn btn-danger" value="Downvote"></td></tr>');
+hoodie.store.on('add:language', function (language) {
+  $('table.table > tbody:last').append('<tr><td>' + language.name + '</td><td>' + language.votes + '</td><td><input type="button" class="' + language.id + ' upvote btn btn-success" value="Upvote"></td><td><input type="button" class="' + language.id + ' downvote btn btn-danger" value="Downvote"></td></tr>');
 });
