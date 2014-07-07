@@ -13,5 +13,6 @@ You can read along the commit messages to get an overall understanding of how Ho
 2. Clone the repository
 3. Open up a terminal
 4. `cd` into the root path of the repository
-5. Type `hoodie start`
-6. Enjoy
+5. Type `npm install` to install all the dependencies
+6. Type `hoodie start` (or `COUCH_URL=http://127.0.0.1:5984 hoodie start` if your CouchDB could not be found)
+7. Enjoy
